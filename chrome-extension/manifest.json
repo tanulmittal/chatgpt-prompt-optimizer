@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Optimizer",
+  "description": "Optimizes prompts on chatgpt.com before you send them.",
+  "version": "1.1.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://chatgpt.com/*", "https://openrouter.ai/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["optimizer.js", "content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "Prompt Optimizer",
+    "default_popup": "popup.html"
+  }
+}

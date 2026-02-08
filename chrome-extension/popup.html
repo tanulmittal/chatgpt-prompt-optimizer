@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Optimizer</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="panel">
+      <h1>Prompt Optimizer</h1>
+
+      <label class="row">
+        <span>Enable extension</span>
+        <input id="enabled" type="checkbox" />
+      </label>
+
+      <label class="stack">
+        <span>Optimization strength</span>
+        <select id="strength">
+          <option value="light">Light</option>
+          <option value="balanced">Balanced</option>
+          <option value="strict">Strict</option>
+        </select>
+      </label>
+
+      <label class="row">
+        <span>Use AI backend</span>
+        <input id="useAiBackend" type="checkbox" />
+      </label>
+
+      <label class="stack">
+        <span>OpenRouter API key</span>
+        <input id="openRouterApiKey" type="password" placeholder="sk-or-v1-..." autocomplete="off" />
+      </label>
+
+      <label class="row">
+        <span>Show in-page toast</span>
+        <input id="showToast" type="checkbox" />
+      </label>
+
+      <p class="hint">Model: <code>x-ai/grok-4.1-fast</code> via OpenRouter</p>
+      <p id="saved" class="saved" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
